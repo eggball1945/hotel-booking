@@ -10,7 +10,7 @@
         <select name="room_id" class="w-full p-2">
             @foreach($rooms as $r)
                 <option value="{{ $r->id }}" {{ request('room_id') == $r->id ? 'selected':'' }}>
-                    {{ $r->room_number }} - {{ $r->type->name }} ({{ $r->type->price }})
+                    {{ $r->room_number }} - {{ optional($r->roomType)->name ?? '-' }} (Rp {{ number_format(optional($r->roomType)->price ?? 0, 0, ',', '.') }})
                 </option>
             @endforeach
         </select>

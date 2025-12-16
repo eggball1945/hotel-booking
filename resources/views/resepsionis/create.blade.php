@@ -8,7 +8,7 @@
         <label>Pilih Kamar:</label>
         <select name="room_id">
             @foreach ($rooms as $room)
-                <option value="{{ $room->id }}">{{ $room->nama_kamar }} - {{ $room->tipe }}</option>
+                <option value="{{ $room->id }}">{{ $room->room_number }} - {{ optional($room->roomType)->name ?? '-' }}</option>
             @endforeach
         </select>
 

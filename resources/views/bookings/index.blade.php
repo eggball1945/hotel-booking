@@ -24,7 +24,7 @@
         @foreach($bookings as $b)
         <tr class="border-b">
             <td class="p-2">{{ $b->booking_code }}</td>
-            <td class="p-2">{{ $b->room->room_number }} ({{ $b->room->type->name }})</td>
+            <td class="p-2">{{ $b->room->room_number }} ({{ optional($b->room->roomType)->name ?? '-' }})</td>
             <td class="p-2">{{ $b->user->name }}</td>
             <td class="p-2">{{ $b->check_in }}</td>
             <td class="p-2">{{ $b->check_out }}</td>

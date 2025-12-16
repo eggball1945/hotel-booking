@@ -46,7 +46,7 @@
 
                                 <td>
                                     {{-- AMAN DARI NULL --}}
-                                    {{ optional($room->type)->name ?? '-' }}
+                                    {{ optional($room->roomType)->name ?? '-' }}
                                 </td>
 
                                 <td>

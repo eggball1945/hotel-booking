@@ -5,7 +5,7 @@
 
 <div class="bg-white p-4 rounded shadow">
     <p><strong>Guest:</strong> {{ $booking->user->name }}</p>
-    <p><strong>Room:</strong> {{ $booking->room->room_number }} ({{ $booking->room->type->name }})</p>
+    <p><strong>Room:</strong> {{ $booking->room->room_number }} ({{ optional($booking->room->roomType)->name ?? '-' }})</p>
     <p><strong>Check In:</strong> {{ $booking->check_in }}</p>
     <p><strong>Check Out:</strong> {{ $booking->check_out }}</p>
     <p><strong>Total:</strong> {{ $booking->total_price }}</p>
